@@ -1,3 +1,21 @@
+<!-- markdownlint-disable -->
+## Objects
+
+<dl>
+<dt><a href="#Tamotsu">Tamotsu</a> : <code>object</code></dt>
+<dd><p>Object-Spreadsheet Mapping for Google Apps Script
+<br>Project key <code>1OiJIgWlrg_DFHFYX_SoaEzhFJPCmwbbfEHEqYEfLEEhKRloTNVJ-3U4s</code></p>
+</dd>
+</dl>
+
+## Typedefs
+
+<dl>
+<dt><a href="#RelativeObjects">RelativeObjects</a> : <code>Object</code></dt>
+<dd><p>Something like <code>Tamotsu.Table</code>, but this is an unreal interface.</p>
+</dd>
+</dl>
+
 <a name="Tamotsu"></a>
 
 ## Tamotsu : <code>object</code>
@@ -8,6 +26,12 @@ Object-Spreadsheet Mapping for Google Apps Script
 
 * [Tamotsu](#Tamotsu) : <code>object</code>
     * _static_
+        * [.Model](#Tamotsu.Model)
+            * [.save()](#Tamotsu.Model.save)
+            * [.destroy()](#Tamotsu.Model.destroy)
+            * [.validate()](#Tamotsu.Model.validate)
+            * [.isValid()](#Tamotsu.Model.isValid)
+            * [.isNewRecord()](#Tamotsu.Model.isNewRecord)
         * [.Table](#Tamotsu.Table)
             * _static_
                 * [.sheet()](#Tamotsu.Table.sheet) ⇒ <code>SpreadsheetApp.Sheet</code>
@@ -19,8 +43,8 @@ Object-Spreadsheet Mapping for Google Apps Script
                 * [.sum(column)](#Tamotsu.Table.sum) ⇒ <code>number</code>
                 * [.max(column)](#Tamotsu.Table.max) ⇒ <code>number</code>
                 * [.min(column)](#Tamotsu.Table.min) ⇒ <code>number</code>
-                * [.where(predicate)](#Tamotsu.Table.where) ⇒ <code>[Table](#Tamotsu.Table)</code>
-                * [.order(comparator)](#Tamotsu.Table.order) ⇒ <code>[Table](#Tamotsu.Table)</code>
+                * [.where(predicate)](#Tamotsu.Table.where) ⇒ <code>[RelativeObjects](#RelativeObjects)</code>
+                * [.order(comparator)](#Tamotsu.Table.order) ⇒ <code>[RelativeObjects](#RelativeObjects)</code>
                 * [.columns()](#Tamotsu.Table.columns) ⇒ <code>Array.&lt;object&gt;</code>
                 * [.columnIndexOf(column)](#Tamotsu.Table.columnIndexOf) ⇒ <code>number</code>
                 * [.columnABCFor(column)](#Tamotsu.Table.columnABCFor) ⇒ <code>number</code>
@@ -50,6 +74,48 @@ Object-Spreadsheet Mapping for Google Apps Script
     * _inner_
         * [~onInitializedCallback](#Tamotsu..onInitializedCallback) : <code>function</code>
 
+<a name="Tamotsu.Model"></a>
+
+### Tamotsu.Model
+**Kind**: static interface of <code>[Tamotsu](#Tamotsu)</code>  
+
+* [.Model](#Tamotsu.Model)
+    * [.save()](#Tamotsu.Model.save)
+    * [.destroy()](#Tamotsu.Model.destroy)
+    * [.validate()](#Tamotsu.Model.validate)
+    * [.isValid()](#Tamotsu.Model.isValid)
+    * [.isNewRecord()](#Tamotsu.Model.isNewRecord)
+
+<a name="Tamotsu.Model.save"></a>
+
+#### Model.save()
+Introduce yourself.
+
+**Kind**: static method of <code>[Model](#Tamotsu.Model)</code>  
+<a name="Tamotsu.Model.destroy"></a>
+
+#### Model.destroy()
+Introduce yourself.
+
+**Kind**: static method of <code>[Model](#Tamotsu.Model)</code>  
+<a name="Tamotsu.Model.validate"></a>
+
+#### Model.validate()
+Introduce yourself.
+
+**Kind**: static method of <code>[Model](#Tamotsu.Model)</code>  
+<a name="Tamotsu.Model.isValid"></a>
+
+#### Model.isValid()
+Introduce yourself.
+
+**Kind**: static method of <code>[Model](#Tamotsu.Model)</code>  
+<a name="Tamotsu.Model.isNewRecord"></a>
+
+#### Model.isNewRecord()
+Introduce yourself.
+
+**Kind**: static method of <code>[Model](#Tamotsu.Model)</code>  
 <a name="Tamotsu.Table"></a>
 
 ### Tamotsu.Table
@@ -66,8 +132,8 @@ Object-Spreadsheet Mapping for Google Apps Script
         * [.sum(column)](#Tamotsu.Table.sum) ⇒ <code>number</code>
         * [.max(column)](#Tamotsu.Table.max) ⇒ <code>number</code>
         * [.min(column)](#Tamotsu.Table.min) ⇒ <code>number</code>
-        * [.where(predicate)](#Tamotsu.Table.where) ⇒ <code>[Table](#Tamotsu.Table)</code>
-        * [.order(comparator)](#Tamotsu.Table.order) ⇒ <code>[Table](#Tamotsu.Table)</code>
+        * [.where(predicate)](#Tamotsu.Table.where) ⇒ <code>[RelativeObjects](#RelativeObjects)</code>
+        * [.order(comparator)](#Tamotsu.Table.order) ⇒ <code>[RelativeObjects](#RelativeObjects)</code>
         * [.columns()](#Tamotsu.Table.columns) ⇒ <code>Array.&lt;object&gt;</code>
         * [.columnIndexOf(column)](#Tamotsu.Table.columnIndexOf) ⇒ <code>number</code>
         * [.columnABCFor(column)](#Tamotsu.Table.columnABCFor) ⇒ <code>number</code>
@@ -177,7 +243,7 @@ Returns min
 
 <a name="Tamotsu.Table.where"></a>
 
-#### Table.where(predicate) ⇒ <code>[Table](#Tamotsu.Table)</code>
+#### Table.where(predicate) ⇒ <code>[RelativeObjects](#RelativeObjects)</code>
 Returns the relation object which meets the given conditions.
 
 **Kind**: static method of <code>[Table](#Tamotsu.Table)</code>  
@@ -204,7 +270,7 @@ Agent.where(condition1).where(condition2).order(comparator).all();
 ```
 <a name="Tamotsu.Table.order"></a>
 
-#### Table.order(comparator) ⇒ <code>[Table](#Tamotsu.Table)</code>
+#### Table.order(comparator) ⇒ <code>[RelativeObjects](#RelativeObjects)</code>
 Returns the relation object which meets the given sort order.
 
 **Kind**: static method of <code>[Table](#Tamotsu.Table)</code>  
@@ -454,3 +520,18 @@ This callback is a function that to be added to the callback list
 | --- | --- | --- |
 | [...params] | <code>\*</code> | Only user defined params and global variables are available |
 
+<a name="RelativeObjects"></a>
+
+## RelativeObjects : <code>Object</code>
+Something like `Tamotsu.Table`, but this is an unreal interface.
+
+**Kind**: global typedef  
+**Example**  
+```js
+// It has the next structure of types
+{
+  comparator: object,
+  predicates: object[],
+  Table:Tamotsu.Table
+}
+```

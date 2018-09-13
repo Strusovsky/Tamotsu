@@ -6,6 +6,24 @@
  * @class Tamotsu.Model
  */
 
+/**
+ * @interface Tamotsu.Model
+ */
+
+/**
+ * Something like `Tamotsu.Table`, but this is an unreal interface.
+ * @example
+ * // It has the next structure of types
+ * {
+ *   comparator: object,
+ *   predicates: object[],
+ *   Table:Tamotsu.Table
+ * }
+ *
+ * @typedef {{comparator:object,predicates:object[],Table:Tamotsu.Table}} RelativeObjects
+ *
+ */
+
 /* exported createTable_ */ // Defined in the module
 /* global ss_, Relation_ */ // Defined outside
 
@@ -169,7 +187,7 @@ var createTable_ = function() {
      *
      * @param {object|Tamotsu.Table~predicateCallback} predicate
      * a condition object or predicate function
-     * @returns {Tamotsu.Table}
+     * @returns {RelativeObjects}
      */
     where: function(predicate) {
       var r = new Relation_(this);
@@ -198,7 +216,7 @@ var createTable_ = function() {
      *
      * @param {string|Tamotsu.Table~comparatorCallback} comparator
      * a column name (supports `ASC`/`DESC`) or comparator function
-     * @returns {Tamotsu.Table}
+     * @returns {RelativeObjects}
      */
     order: function(comparator) {
       var r = new Relation_(this);
