@@ -5,6 +5,10 @@ var createRelation_ = function() {
   };
   
   Object.defineProperties(Relation_.prototype, {
+    /**
+     * Filter data
+     * @memberof Table
+     */
     where: { value: function(predicate) {
       this.predicates.push(predicate);
       return this;
